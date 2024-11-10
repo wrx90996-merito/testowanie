@@ -7,12 +7,6 @@ jobs:
     steps:
       - checkout  # Pobieranie kodu źródłowego
       - run:
-          name: Instalacja zależności
-          command: |
-            python -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt  # Instalowanie zależności
-      - run:
           name: Uruchamianie testów
           command: |
             . venv/bin/activate

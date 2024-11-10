@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Uruchamianie testów
           command: |
-            python -m unittest discover  # Uruchamianie testów jednostkowych
+            python -m unittest discover
 
 workflows:
   version: 2

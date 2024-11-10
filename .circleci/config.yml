@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: circleci/python:3.8
     steps:
-      - checkout  # Pobieranie kodu źródłowego
+      - checkout
       - run:
           name: Uruchamianie testów
           command: |

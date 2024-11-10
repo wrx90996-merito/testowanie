@@ -9,7 +9,6 @@ jobs:
       - run:
           name: Uruchamianie testów
           command: |
-            . venv/bin/activate
             python -m unittest discover  # Uruchamianie testów jednostkowych
 
 workflows:

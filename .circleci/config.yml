@@ -6,10 +6,33 @@ jobs:
       - image: circleci/python:3.8
     steps:
       - checkout
+  test:
+    docker:
+    - image: circleci/python:3.8
+    steps:
       - run:
-          name: Uruchamianie testów
+        name: Instalacja paczek
+        command: |
+          pip install -r requirements.txt
+      - run:
+        name: Deploy aplikacji
+        command: |
+          python -m unittest discover
+
+  deploy:
+    docker:
+      - image: cimg/python:3.8
+    steps:
+      - run:
+          name: Deploy aplikacji
           command: |
-            python -m unittest discover
+            echo "Deploying app 3..."
+            sleep 1
+            echo "Deploying app 2..."
+            sleep 1
+            echo "Deploying app 1..."
+            sleep 1
+            echo "Deployed"
 
 workflows:
   version: 2
